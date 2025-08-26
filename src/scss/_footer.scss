@@ -1,1 +1,25 @@
-@use "variables";
+@use "variables" as *;
+
+.site-footer {
+  background: #0b1d3a;
+  color: white;
+  padding: 2rem;
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  h4 {
+    margin-bottom: .5rem;
+    font-weight: 600;
+  }
+  p { 
+    font-size: 0.9rem; 
+  }
+  .copyright {
+    text-align: center;
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
+}
