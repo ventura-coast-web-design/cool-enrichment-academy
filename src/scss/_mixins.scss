@@ -1,9 +1,9 @@
-@use "variables";
+@use "variables" as *;
 // Mixins
 @mixin container {
-  max-width: variables.$container-max-width;
+  max-width: $container-max-width;
   margin: 0 auto;
-  padding: 0 variables.$container-padding;
+  padding: 0 $container-padding;
 }
 
 @mixin flex-center {

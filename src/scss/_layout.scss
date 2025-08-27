@@ -1,9 +1,9 @@
-@use "variables";
+@use "variables" as *;
 @use "mixins";
 // Layout components
 .site-header {
-  background-color: variables.$background-color;
-  border-bottom: 1px solid variables.$border-color;
+  background-color: $color-bg-light;
+  border-bottom: 1px solid $color-navy;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -22,7 +22,7 @@
   &__logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: variables.$secondary-color;
+    color: $color-purple;
   }
 
   &__menu {
@@ -30,18 +30,18 @@
     list-style: none;
     gap: 2rem;
 
-    @include mixins.responsive(variables.$breakpoint-md) {
+    @include mixins.responsive($breakpoint-md) {
       gap: 3rem;
     }
   }
 
   &__link {
-    color: variables.$text-color;
+    color: $color-text-dark;
     font-weight: 500;
     transition: color 0.2s ease;
 
     &:hover {
-      color: variables.$primary-color;
+      color: $color-navy-light;
     }
   }
 }
@@ -50,14 +50,14 @@
   min-height: calc(100vh - 140px);
   padding: 2rem 0;
 
-  @include mixins.responsive(variables.$breakpoint-md) {
+  @include mixins.responsive($breakpoint-md) {
     padding: 4rem 0;
   }
 }
 
 .site-footer {
-  background-color: variables.$light-background;
-  border-top: 1px solid variables.$border-color;
+  background-color: $color-bg-light;
+  border-top: 1px solid $color-navy;
   padding: 2rem 0;
   margin-top: auto;
 }
@@ -65,7 +65,7 @@
 .footer__container {
   @include mixins.container;
   text-align: center;
-  color: variables.$light-text;
+  color: $color-yellow-light;
 }
 
 // Grid system
@@ -76,7 +76,7 @@
   &--2 {
     grid-template-columns: 1fr;
 
-    @include mixins.responsive(variables.$breakpoint-md) {
+    @include mixins.responsive($breakpoint-md) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -84,11 +84,11 @@
   &--3 {
     grid-template-columns: 1fr;
 
-    @include mixins.responsive(variables.$breakpoint-md) {
+    @include mixins.responsive($breakpoint-md) {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include mixins.responsive(variables.$breakpoint-lg) {
+    @include mixins.responsive($breakpoint-lg) {
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -96,11 +96,11 @@
   &--4 {
     grid-template-columns: 1fr;
 
-    @include mixins.responsive(variables.$breakpoint-md) {
+    @include mixins.responsive($breakpoint-md) {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include mixins.responsive(variables.$breakpoint-lg) {
+    @include mixins.responsive($breakpoint-lg) {
       grid-template-columns: repeat(4, 1fr);
     }
   }
