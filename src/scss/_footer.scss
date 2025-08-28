@@ -1,25 +1,59 @@
 @use "variables" as *;
 
 .site-footer {
-  background: #0b1d3a;
-  color: white;
-  padding: 2rem;
+  background: $color-forest;
+  color: $color-cream;
+  padding: $spacing-xl $spacing-lg;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $color-sage, $color-terracotta, $color-sage);
+  }
+  
   .footer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $spacing-lg;
+    margin-bottom: $spacing-lg;
   }
+  
   h4 {
-    margin-bottom: .5rem;
-    font-weight: 600;
+    margin-bottom: $spacing-sm;
+    font-weight: $font-weight-bold;
+    color: $color-cream-light;
+    font-family: $font-family-heading;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: $color-sage-light;
+      border-radius: 1px;
+    }
   }
+  
   p { 
-    font-size: 0.9rem; 
+    font-size: 1rem; 
+    line-height: $line-height-base;
+    margin-bottom: $spacing-sm;
   }
+  
   .copyright {
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     opacity: 0.8;
+    margin-top: $spacing-lg;
+    padding-top: $spacing-md;
+    border-top: 1px solid rgba(245, 245, 220, 0.2);
   }
 }

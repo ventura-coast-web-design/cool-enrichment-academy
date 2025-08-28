@@ -4,23 +4,79 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background: #ffffff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    padding: $spacing-md $spacing-lg;
+    background: $color-cream-light;
+    box-shadow: $shadow-soft;
+    border-bottom: 2px solid $color-sage-light;
+    position: relative;
     
-    
-    .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #0b1d3a;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, $color-sage, $color-terracotta, $color-sage);
     }
     
     
-    .nav-links a {
-    margin-left: 1.5rem;
-    text-decoration: none;
-    font-weight: 500;
-    color: #0b1d3a;
-    &:hover { color: #e67a2c; }
+    .logo {
+    font-size: 1.75rem;
+    font-weight: $font-weight-bold;
+    color: $color-forest;
+    font-family: $font-family-heading;
+    position: relative;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $color-terracotta;
+        border-radius: 1px;
+    }
+    }
+    
+    
+    .nav-links {
+        display: flex;
+        gap: $spacing-lg;
+        
+        a {
+        margin-left: 0;
+        text-decoration: none;
+        font-weight: $font-weight-medium;
+        color: $color-forest;
+        font-size: 1.125rem;
+        padding: $spacing-xs $spacing-sm;
+        border-radius: $border-radius-sm;
+        transition: all 0.3s ease;
+        position: relative;
+        
+        &:hover { 
+            color: $color-terracotta; 
+            background: rgba(156, 175, 136, 0.1);
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: $color-terracotta;
+            transition: width 0.3s ease;
+            border-radius: 1px;
+        }
+        
+        &:hover::after {
+            width: 100%;
+        }
+        }
     }
     }
