@@ -1,51 +1,49 @@
-// Variables - Indie/Grassroots Color Palette
-$color-sage: #9caf88;           // Muted sage green
-$color-sage-light: #b8c9a3;     // Lighter sage
-$color-sage-dark: #7a8f6a;      // Darker sage
-$color-terracotta: #d2691e;     // Warm terracotta
-$color-terracotta-light: #e07a5f; // Lighter terracotta
-$color-terracotta-dark: #b85a1a;  // Darker terracotta
-$color-cream: #f5f5dc;          // Warm cream
-$color-cream-light: #fafaf0;    // Lighter cream
-$color-cream-dark: #e8e8d0;     // Darker cream
-$color-forest: #2d5016;         // Deep forest green
-$color-forest-light: #4a7c59;   // Lighter forest
-$color-forest-dark: #1a3d0e;    // Darker forest
-$color-burnt: #8b4513;          // Burnt sienna
-$color-burnt-light: #a0522d;    // Lighter burnt
-$color-burnt-dark: #654321;     // Darker burnt
-$color-bg-light: #fafaf8;       // Very light cream
-$color-bg-mid: #f5f5f0;         // Light cream
-$color-bg-card: #f8f8f2;        // Card background
-$color-text-dark: #2c2c2c;      // Soft black
-$color-text-mid: #4a4a4a;       // Medium text
+// Variables - Clean, Minimal Aesthetic (inspired by The Nook Café)
+$color-cream: #faf9f7;
+$color-cream-light: #fefcf9;
+$color-cream-dark: #f5f3f0;
+$color-sage: #8a9a8b;
+$color-sage-light: #a8b5a9;
+$color-sage-dark: #6b7a6c;
+$color-terracotta: #c4a484;
+$color-terracotta-light: #d4b494;
+$color-terracotta-dark: #b49474;
+$color-forest: #3a4a3b;
+$color-forest-light: #5a6a5b;
+$color-forest-dark: #2a3a2b;
+$color-text-dark: #2c2c2c;
+$color-text-mid: #5a5a5a;
+$color-text-light: #8a8a8a;
+$color-bg-light: #fefcf9;
+$color-bg-mid: #faf9f7;
+$color-bg-card: #fefcf9;
 
-// Typography - More organic, indie feel
-$font-family: 'Georgia', 'Times New Roman', serif;  // More classic, readable
-$font-family-heading: 'Georgia', 'Times New Roman', serif;  // Consistent headings
-$font-size-base: 18px;          // Slightly larger for readability
-$line-height-base: 1.7;         // More generous spacing
+// Typography - Clean, readable
+$font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
 $font-weight-normal: 400;
 $font-weight-medium: 500;
 $font-weight-bold: 600;
 
-// Spacing - Organic, comfortable spacing
+// Spacing - Clean, generous spacing
 $spacing-xs: 0.5rem;
 $spacing-sm: 1rem;
 $spacing-md: 1.5rem;
-$spacing-lg: 2.5rem;
-$spacing-xl: 4rem;
-$spacing-xxl: 6rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-xxl: 4rem;
 
-// Border radius - Softer, more organic
-$border-radius-sm: 0.5rem;
-$border-radius-md: 1rem;
-$border-radius-lg: 1.5rem;
+// Border radius - Subtle, clean
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+$border-radius-lg: 0.75rem;
 
-// Shadows - Subtle, organic shadows
-$shadow-soft: 0 2px 8px rgba(45, 80, 22, 0.08);
-$shadow-medium: 0 4px 16px rgba(45, 80, 22, 0.12);
-$shadow-strong: 0 8px 32px rgba(45, 80, 22, 0.16);
+// Shadows - Very subtle, clean shadows
+$shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.05);
+$shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-strong: 0 4px 16px rgba(0, 0, 0, 0.12);
 
 $container-max-width: 1200px;
 $container-padding: 1rem;
