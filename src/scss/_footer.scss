@@ -1,22 +1,14 @@
 @use "variables" as *;
 
 .site-footer {
-  background: $color-forest;
-  color: $color-cream;
+  background: $color-bg-mid;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding: $spacing-xl $spacing-lg;
-  position: relative;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, $color-sage, $color-terracotta, $color-sage);
-  }
   
   .footer-grid {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: $spacing-lg;
@@ -24,36 +16,24 @@
   }
   
   h4 {
-    margin-bottom: $spacing-sm;
+    font-size: 1.125rem;
     font-weight: $font-weight-bold;
-    color: $color-cream-light;
-    font-family: $font-family-heading;
-    position: relative;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 40px;
-      height: 2px;
-      background: $color-sage-light;
-      border-radius: 1px;
-    }
+    color: $color-text-dark;
+    margin-bottom: $spacing-sm;
   }
   
-  p { 
-    font-size: 1rem; 
-    line-height: $line-height-base;
+  p {
+    color: $color-text-mid;
     margin-bottom: $spacing-sm;
+    line-height: 1.6;
   }
   
   .copyright {
     text-align: center;
     font-size: 0.875rem;
-    opacity: 0.8;
+    color: $color-text-light;
     margin-top: $spacing-lg;
     padding-top: $spacing-md;
-    border-top: 1px solid rgba(245, 245, 220, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
 }
