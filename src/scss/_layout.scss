@@ -53,7 +53,6 @@
 
 .site-main {
   min-height: calc(100vh - 140px);
-  padding: $spacing-lg 0;
 
   @include mixins.responsive($breakpoint-md) {
     padding: $spacing-xl 0;
