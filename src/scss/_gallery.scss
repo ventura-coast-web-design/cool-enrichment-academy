@@ -1,0 +1,254 @@
+@use "variables" as *;
+
+// Gallery hero section
+.gallery-hero {
+  padding: $spacing-xxl $spacing-lg;
+  background: $color-bg-light;
+  text-align: center;
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    color: $color-text-dark;
+    margin-bottom: $spacing-sm;
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 1.125rem;
+    color: $color-text-mid;
+    line-height: 1.6;
+  }
+}
+
+// Gallery section
+.gallery-section {
+  padding: $spacing-xxl $spacing-lg;
+  background: white;
+  
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+  }
+}
+
+// Gallery tabs
+.gallery-tabs {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-xl;
+  flex-wrap: wrap;
+  
+  .tab-button {
+    padding: $spacing-sm $spacing-lg;
+    background: transparent;
+    border: 2px solid $color-sage;
+    color: $color-sage;
+    border-radius: $border-radius-sm;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: rgba(138, 154, 139, 0.1);
+    }
+    
+    &.active {
+      background: $color-sage;
+      color: white;
+    }
+  }
+}
+
+// Gallery grid
+.gallery-grid {
+  .gallery-content {
+    display: none;
+    
+    &.active {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: $spacing-md;
+      
+      @media (max-width: $breakpoint-sm) {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: $spacing-sm;
+      }
+    }
+  }
+  
+  .photo-item {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-soft;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: $shadow-medium;
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Lightbox modal
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .lightbox-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: $border-radius-sm;
+  }
+  
+  .lightbox-caption {
+    color: white;
+    text-align: center;
+    margin-top: $spacing-md;
+    font-size: 1.125rem;
+    max-width: 600px;
+  }
+  
+  .lightbox-close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: $spacing-xs;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: $color-sage;
+    }
+  }
+  
+  .lightbox-prev,
+  .lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: $spacing-sm;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+      color: $color-sage;
+    }
+  }
+  
+  .lightbox-prev {
+    left: -60px;
+  }
+  
+  .lightbox-next {
+    right: -60px;
+  }
+}
+
+// Mobile responsiveness for lightbox
+@media (max-width: $breakpoint-md) {
+  .lightbox {
+    .lightbox-content {
+      max-width: 95vw;
+      max-height: 95vh;
+    }
+    
+    .lightbox-close {
+      top: -40px;
+      font-size: 1.5rem;
+    }
+    
+    .lightbox-prev,
+    .lightbox-next {
+      font-size: 1.5rem;
+      padding: $spacing-xs;
+    }
+    
+    .lightbox-prev {
+      left: -40px;
+    }
+    
+    .lightbox-next {
+      right: -40px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .lightbox {
+    .lightbox-prev,
+    .lightbox-next {
+      position: fixed;
+      bottom: 20px;
+      top: auto;
+      transform: none;
+    }
+    
+    .lightbox-prev {
+      left: 20px;
+    }
+    
+    .lightbox-next {
+      right: 20px;
+    }
+  }
+}
