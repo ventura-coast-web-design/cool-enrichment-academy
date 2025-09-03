@@ -6,27 +6,28 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  
+  box-shadow: $shadow-soft;
+
   .nav {
-    max-width: $container-max-width;
-    margin: 0 auto;
-    padding: 0 $container-padding;
-    
-    &__container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: $spacing-md 0;
-      position: relative;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  &__logo {
+    z-index: 101;
+
+    &-image {
+      width: 7rem;
+      height: auto;
     }
-    
-    &__logo {
-      font-size: 1.5rem;
-      font-weight: $font-weight-bold;
-      color: $color-text-dark;
-      text-decoration: none;
-      z-index: 101;
-    }
+  }
     
     // Mobile hamburger toggle
     &__toggle {
