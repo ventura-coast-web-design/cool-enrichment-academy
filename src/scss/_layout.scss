@@ -1,62 +1,10 @@
 @use "variables" as *;
 @use "mixins";
-// Layout components
-.site-header {
-  background-color: $color-cream-light;
-  border-bottom: 2px solid $color-sage-light;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: $shadow-soft;
-}
-
-.nav {
-  @include mixins.container;
-
-  &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: $spacing-md 0;
-  }
-
-  &__logo {
-    font-size: 1.75rem;
-    font-weight: $font-weight-bold;
-    color: $color-forest;
-    font-family: $font-family-heading;
-  }
-
-  &__menu {
-    display: flex;
-    list-style: none;
-    gap: $spacing-lg;
-
-    @include mixins.responsive($breakpoint-md) {
-      gap: $spacing-xl;
-    }
-  }
-
-  &__link {
-    color: $color-text-dark;
-    font-weight: $font-weight-medium;
-    transition: all 0.3s ease;
-    padding: $spacing-xs $spacing-sm;
-    border-radius: $border-radius-sm;
-
-    &:hover {
-      color: $color-terracotta;
-      background: rgba(156, 175, 136, 0.1);
-    }
-  }
-}
 
 .site-main {
   min-height: calc(100vh - 140px);
 
-  @include mixins.responsive($breakpoint-md) {
-    padding: $spacing-xl 0;
-  }
+
 }
 
 .site-footer {
