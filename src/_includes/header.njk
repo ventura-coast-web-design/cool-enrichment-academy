@@ -2,11 +2,42 @@
     <nav class="nav">
         <div class="nav__container">
             <a href="/" class="nav__logo">C.O.O.L. Enrichment Academy</a>
+            
+            <!-- Mobile menu toggle -->
+            <button class="nav__toggle" type="button" aria-label="Toggle navigation">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
+            
             <ul class="nav__menu">
                 <li><a href="/" class="nav__link">Home</a></li>
-                <li><a href="/about" class="nav__link">About</a></li>
+                <li><a href="/programs" class="nav__link">Programs</a></li>
                 <li><a href="/contact" class="nav__link">Contact</a></li>
             </ul>
         </div>
     </nav>
-</header> 
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.querySelector('.nav__toggle');
+    const menu = document.querySelector('.nav__menu');
+    
+    if (toggle && menu) {
+        toggle.addEventListener('click', function() {
+            menu.classList.toggle('nav__menu--open');
+            toggle.classList.toggle('nav__toggle--open');
+        });
+        
+        // Close menu when clicking on a link
+        const menuLinks = document.querySelectorAll('.nav__link');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menu.classList.remove('nav__menu--open');
+                toggle.classList.remove('nav__toggle--open');
+            });
+        });
+    }
+});
+</script>

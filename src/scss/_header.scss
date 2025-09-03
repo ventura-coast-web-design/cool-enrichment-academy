@@ -17,6 +17,7 @@
       justify-content: space-between;
       align-items: center;
       padding: $spacing-md 0;
+      position: relative;
     }
     
     &__logo {
@@ -24,6 +25,55 @@
       font-weight: $font-weight-bold;
       color: $color-text-dark;
       text-decoration: none;
+      z-index: 101;
+    }
+    
+    // Mobile hamburger toggle
+    &__toggle {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: $spacing-xs;
+      z-index: 101;
+      
+      @media (max-width: $breakpoint-md) {
+        display: flex;
+      }
+      
+      &-bar {
+        width: 24px;
+        height: 2px;
+        background: $color-text-dark;
+        transition: all 0.3s ease;
+        margin: 2px 0;
+        
+        &:first-child {
+          margin-top: 0;
+        }
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      
+      // Hamburger animation when open
+      &--open {
+        .nav__toggle-bar {
+          &:first-child {
+            transform: rotate(45deg) translate(6px, 6px);
+          }
+          
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          
+          &:last-child {
+            transform: rotate(-45deg) translate(6px, -6px);
+          }
+        }
+      }
     }
     
     &__menu {
@@ -32,6 +82,25 @@
       gap: $spacing-lg;
       margin: 0;
       padding: 0;
+      
+      @media (max-width: $breakpoint-md) {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: $spacing-xl;
+        transition: right 0.3s ease;
+        z-index: 100;
+        
+        &--open {
+          right: 0;
+        }
+      }
     }
     
     &__link {
@@ -42,6 +111,11 @@
       
       &:hover {
         color: $color-sage;
+      }
+      
+      @media (max-width: $breakpoint-md) {
+        font-size: 1.25rem;
+        padding: $spacing-sm;
       }
     }
   }
