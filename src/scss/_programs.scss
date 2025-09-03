@@ -1,0 +1,161 @@
+@use "variables" as *;
+
+// Programs hero section
+.programs-hero {
+  padding: $spacing-xxl $spacing-lg;
+  background: $color-bg-light;
+  text-align: center;
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    color: $color-text-dark;
+    margin-bottom: $spacing-sm;
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 1.125rem;
+    color: $color-text-mid;
+    line-height: 1.6;
+  }
+}
+
+// Schedule section
+.schedule-section {
+  padding: $spacing-xxl $spacing-lg;
+  background: white;
+  
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+  }
+}
+
+// Schedule table
+.schedule-table {
+  background: $color-bg-card;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-soft;
+  overflow: hidden;
+  
+  // Header row
+  .schedule-header {
+    display: grid;
+    grid-template-columns: 120px repeat(4, 1fr);
+    background: $color-text-dark;
+    color: white;
+    
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 100px repeat(4, 1fr);
+      font-size: 0.875rem;
+    }
+    
+    .time-column, .day-column {
+      padding: $spacing-md;
+      font-weight: $font-weight-bold;
+      text-align: center;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+  
+  // Schedule rows
+  .schedule-row {
+    display: grid;
+    grid-template-columns: 120px repeat(4, 1fr);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 100px repeat(4, 1fr);
+    }
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    &:nth-child(even) {
+      background: rgba(0, 0, 0, 0.02);
+    }
+    
+    // Special styling for snack and lunch rows
+    &.snack-row, &.lunch-row {
+      background: rgba(168, 181, 169, 0.1);
+      
+      .activity {
+        font-weight: $font-weight-medium;
+        color: $color-sage-dark;
+      }
+    }
+  }
+  
+  // Time slot column
+  .time-slot {
+    padding: $spacing-md;
+    font-weight: $font-weight-medium;
+    color: $color-text-dark;
+    background: $color-bg-mid;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    
+    @media (max-width: $breakpoint-md) {
+      padding: $spacing-sm;
+      font-size: 0.875rem;
+    }
+  }
+  
+  // Activity cells
+  .activity {
+    padding: $spacing-md;
+    color: $color-text-mid;
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    line-height: 1.4;
+    
+    @media (max-width: $breakpoint-md) {
+      padding: $spacing-sm;
+      font-size: 0.875rem;
+    }
+    
+    &:last-child {
+      border-right: none;
+    }
+    
+    // Special styling for breaks
+    &.snack, &.lunch {
+      text-align: center;
+      font-style: italic;
+    }
+  }
+}
+
+// Mobile responsiveness for very small screens
+@media (max-width: $breakpoint-sm) {
+  .schedule-table {
+    .schedule-header,
+    .schedule-row {
+      grid-template-columns: 80px repeat(4, 1fr);
+    }
+    
+    .time-slot,
+    .activity {
+      padding: $spacing-xs;
+      font-size: 0.75rem;
+    }
+    
+    .time-column,
+    .day-column {
+      padding: $spacing-sm;
+      font-size: 0.75rem;
+    }
+  }
+}
