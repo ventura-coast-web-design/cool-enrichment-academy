@@ -124,6 +124,87 @@ body {
   }
 }
 
+// Photo Banner - Responsive grid
+.photo-banner {
+  background: $color-bg-mid;
+  overflow: hidden;
+  
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 100%;
+    margin: 0 auto;
+    
+    // Desktop: Show all 12 photos
+    @media (min-width: $breakpoint-xl) {
+      grid-template-columns: repeat(12, 1fr);
+    }
+    
+    // Large tablets: Show 8 photos
+    @media (max-width: $breakpoint-xl) and (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(8, 1fr);
+      
+      .photo-item:nth-child(n+9) {
+        display: none;
+      }
+    }
+    
+    // Tablets: Show 6 photos
+    @media (max-width: $breakpoint-lg) and (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(6, 1fr);
+      
+      .photo-item:nth-child(n+7) {
+        display: none;
+      }
+    }
+    
+    // Mobile: Show 4 photos
+    @media (max-width: $breakpoint-md) and (min-width: $breakpoint-sm) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: $spacing-xs;
+      
+      .photo-item:nth-child(n+5) {
+        display: none;
+      }
+    }
+    
+    // Small mobile: Show 3 photos
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-xs;
+      
+      .photo-item:nth-child(n+4) {
+        display: none;
+      }
+    }
+  }
+  
+  .photo-item {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    box-shadow: $shadow-soft;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: $shadow-medium;
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+}
+
 // Our Story - Clean, centered
 .our-story {
   padding: $spacing-xxl $spacing-lg;
