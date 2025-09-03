@@ -1,1 +1,200 @@
 @use "variables" as *;
+
+// Contact hero section
+.contact-hero {
+  padding: $spacing-xxl $spacing-lg;
+  background: $color-bg-light;
+  text-align: center;
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    color: $color-text-dark;
+    margin-bottom: $spacing-sm;
+    line-height: 1.2;
+  }
+  
+  p {
+    font-size: 1.125rem;
+    color: $color-text-mid;
+    line-height: 1.6;
+  }
+}
+
+// Contact section
+.contact-section {
+  padding: $spacing-xxl $spacing-lg;
+  background: white;
+  
+  .container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 $container-padding;
+  }
+  
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xxl;
+    align-items: start;
+    
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+}
+
+// Contact info
+.contact-info {
+  h2 {
+    font-size: 2rem;
+    color: $color-text-dark;
+    margin-bottom: $spacing-lg;
+  }
+  
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+  
+  .contact-item {
+    h3 {
+      font-size: 1.25rem;
+      color: $color-text-dark;
+      margin-bottom: $spacing-sm;
+      font-weight: $font-weight-bold;
+    }
+    
+    p {
+      color: $color-text-mid;
+      line-height: 1.6;
+      margin-bottom: 0;
+      
+      a {
+        color: $color-text-dark;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: $color-sage;
+        }
+      }
+    }
+  }
+}
+
+// Contact form
+.contact-form-container {
+  background: $color-bg-card;
+  padding: $spacing-xl;
+  border-radius: $border-radius-md;
+  box-shadow: $shadow-soft;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    
+    label {
+      font-weight: $font-weight-medium;
+      color: $color-text-dark;
+      margin-bottom: $spacing-xs;
+      font-size: 0.875rem;
+    }
+    
+    input, select, textarea {
+      padding: $spacing-sm;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: $border-radius-sm;
+      font-size: 1rem;
+      font-family: $font-family;
+      transition: border-color 0.2s ease;
+      
+      &:focus {
+        outline: none;
+        border-color: $color-sage;
+        box-shadow: 0 0 0 2px rgba(138, 154, 139, 0.1);
+      }
+      
+      &::placeholder {
+        color: $color-text-light;
+      }
+    }
+    
+    select {
+      cursor: pointer;
+      background: white;
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+  
+  // Checkbox styling
+  .checkbox-group {
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: $spacing-sm;
+      cursor: pointer;
+      font-weight: $font-weight-normal;
+      
+      input[type="checkbox"] {
+        width: auto;
+        margin: 0;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  // Submit button
+  .btn-primary {
+    align-self: flex-start;
+    margin-top: $spacing-sm;
+  }
+}
+
+// Form validation states
+.contact-form {
+  input:invalid, select:invalid, textarea:invalid {
+    border-color: #e74c3c;
+  }
+  
+  input:valid, select:valid, textarea:valid {
+    border-color: #27ae60;
+  }
+}
+
+// Success/error messages (for JavaScript enhancement)
+.form-message {
+  padding: $spacing-sm;
+  border-radius: $border-radius-sm;
+  margin-bottom: $spacing-md;
+  
+  &.success {
+    background: rgba(39, 174, 96, 0.1);
+    color: #27ae60;
+    border: 1px solid rgba(39, 174, 96, 0.2);
+  }
+  
+  &.error {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.2);
+  }
+}
