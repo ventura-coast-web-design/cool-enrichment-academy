@@ -3,22 +3,6 @@
 
 .site-main {
   min-height: calc(100vh - 140px);
-
-
-}
-
-.site-footer {
-  background-color: $color-forest;
-  border-top: 2px solid $color-sage-light;
-  padding: $spacing-xl 0;
-  margin-top: auto;
-  box-shadow: $shadow-soft;
-}
-
-.footer__container {
-  @include mixins.container;
-  text-align: center;
-  color: $color-cream;
 }
 
 // Grid system
