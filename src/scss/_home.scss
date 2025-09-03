@@ -233,7 +233,7 @@ body {
 // Events & Community - Clean grid
 .events-community {
   padding: $spacing-xxl $spacing-lg;
-  background: white;
+  background: $color-sage-dark;
   
   .container {
     max-width: $container-max-width;
@@ -245,7 +245,7 @@ body {
     text-align: center;
     margin-bottom: $spacing-xl;
     font-size: 2rem;
-    color: $color-text-dark;
+    color: white;
   }
   
   .events-grid {
@@ -263,7 +263,7 @@ body {
     
     h3 {
       font-size: 1.25rem;
-      color: $color-text-dark;
+      color: $color-forest-dark;
       margin-bottom: $spacing-xs;
     }
     
