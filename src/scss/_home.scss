@@ -98,14 +98,19 @@ body {
 
     @media (min-width: $breakpoint-md) {
       flex-direction: row;
+      justify-content: space-between;
     }
 
 
     h2 {
       text-align: center;
-      margin-bottom: $spacing-xl;
+      margin-bottom: $spacing-md;
       font-size: 2rem;
       color: $color-text-dark;
+      
+      @media (min-width: $breakpoint-md) {
+        margin-bottom: 0;
+      }
     }
 
   }
@@ -113,8 +118,8 @@ body {
   
   .programs-grid {
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: $spacing-lg;
 
     .program-card {
       background: $color-bg-card;
@@ -132,6 +137,7 @@ body {
         font-size: 1.25rem;
         color: $color-text-dark;
         margin-bottom: $spacing-sm;
+        text-align: center;
       }
 
       .program-card-content {
@@ -146,6 +152,7 @@ body {
           margin-bottom: $spacing-md;
           line-height: 1.6;
           flex: 1;
+          text-align: center;
         }
   
         img {
@@ -153,81 +160,8 @@ body {
           height: 270px;
           object-fit: cover;
           object-position: center;
-          border-radius: $border-radius-sm;
+          border-radius: 50%;
         } 
-      }
-      
-      // Organic blob shapes using CSS shape() function
-      &:nth-child(1) .program-card-content img {
-        clip-path: shape(
-          from 91.52% 26.2%,
-          curve to 93.52% 78.28% with 101.76% 42.67%/103.09% 63.87%,
-          curve to 44.11% 99.97% with 83.95% 92.76%/63.47% 100.58%,
-          curve to 1.45% 78.42% with 24.74% 99.42%/6.42% 90.43%,
-          curve to 14.06% 35.46% with -3.45% 66.41%/4.93% 51.38%,
-          curve to 47.59% 0.33% with 23.18% 19.54%/33.13% 2.8%,
-          curve to 91.52% 26.2% with 62.14% -2.14%/81.28% 9.66%
-        );
-      }
-      
-      &:nth-child(2) .program-card-content img {
-        clip-path: shape(
-          from 85.2% 15.8%,
-          curve to 95.2% 75.5% with 98.5% 35.2%/102.1% 55.8%,
-          curve to 35.8% 98.2% with 75.2% 88.5%/55.1% 95.3%,
-          curve to 5.2% 72.1% with 18.5% 92.8%/8.1% 82.3%,
-          curve to 18.5% 28.9% with 2.1% 50.5%/8.9% 38.2%,
-          curve to 52.1% 2.1% with 35.2% 12.8%/43.8% 5.2%,
-          curve to 85.2% 15.8% with 68.9% 8.2%/77.1% 12.5%
-        );
-      }
-      
-      &:nth-child(3) .program-card-content img {
-        clip-path: shape(
-          from 88.3% 22.1%,
-          curve to 96.8% 82.5% with 100.2% 48.3%/103.8% 68.9%,
-          curve to 38.9% 96.8% with 69.5% 90.2%/54.1% 98.5%,
-          curve to 8.5% 75.8% with 23.5% 95.2%/15.8% 85.2%,
-          curve to 22.8% 32.1% with 5.8% 54.2%/14.2% 42.8%,
-          curve to 58.2% 1.8% with 40.5% 16.8%/49.2% 8.5%,
-          curve to 88.3% 22.1% with 73.8% 14.5%/81.1% 18.2%
-        );
-      }
-      
-      &:nth-child(4) .program-card-content img {
-        clip-path: shape(
-          from 92.8% 18.5%,
-          curve to 98.2% 85.2% with 102.8% 45.8%/105.2% 72.1%,
-          curve to 42.8% 95.5% with 72.1% 88.2%/57.5% 92.8%,
-          curve to 12.5% 68.9% with 28.9% 88.5%/20.2% 78.2%,
-          curve to 25.8% 25.2% with 8.5% 47.1%/17.2% 35.8%,
-          curve to 62.5% 3.2% with 44.2% 18.5%/53.5% 10.8%,
-          curve to 92.8% 18.5% with 78.2% 12.1%/85.5% 15.2%
-        );
-      }
-      
-      &:nth-child(5) .program-card-content img {
-        clip-path: shape(
-          from 89.5% 25.8%,
-          curve to 94.2% 78.9% with 99.8% 42.1%/102.5% 65.2%,
-          curve to 35.2% 98.5% with 65.8% 91.2%/50.5% 95.8%,
-          curve to 6.8% 72.5% with 22.1% 92.1%/14.5% 82.8%,
-          curve to 19.8% 28.5% with 3.8% 50.8%/11.8% 38.9%,
-          curve to 55.8% 2.5% with 37.5% 17.2%/46.8% 9.5%,
-          curve to 89.5% 25.8% with 72.8% 16.5%/81.2% 21.2%
-        );
-      }
-      
-      &:nth-child(6) .program-card-content img {
-        clip-path: shape(
-          from 87.2% 20.8%,
-          curve to 95.8% 82.1% with 101.2% 48.5%/104.5% 69.8%,
-          curve to 38.5% 97.2% with 68.8% 89.8%/53.8% 94.2%,
-          curve to 9.2% 74.2% with 25.2% 93.5%/17.2% 83.8%,
-          curve to 21.5% 30.8% with 4.8% 52.5%/13.2% 41.5%,
-          curve to 58.8% 1.5% with 40.8% 15.8%/49.8% 7.8%,
-          curve to 87.2% 20.8% with 73.5% 13.2%/80.5% 17.2%
-        );
       }
     }
   }
