@@ -46,7 +46,7 @@
   box-shadow: $shadow-soft;
   overflow: hidden;
   
-  // Header row
+  // Header row - hide on mobile, show on desktop
   .schedule-header {
     display: grid;
     grid-template-columns: 120px repeat(4, 1fr);
@@ -54,8 +54,7 @@
     color: white;
     
     @media (max-width: $breakpoint-md) {
-      grid-template-columns: 100px repeat(4, 1fr);
-      font-size: 0.875rem;
+      display: none;
     }
     
     .time-column, .day-column {
@@ -70,31 +69,70 @@
     }
   }
   
-  // Schedule rows
+  // Schedule rows - desktop table layout
   .schedule-row {
     display: grid;
     grid-template-columns: 120px repeat(4, 1fr);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     
     @media (max-width: $breakpoint-md) {
-      grid-template-columns: 100px repeat(4, 1fr);
+      // Mobile: transform to day-based cards
+      display: block;
+      border-bottom: none;
+      margin-bottom: $spacing-lg;
+      background: white;
+      border-radius: $border-radius-sm;
+      box-shadow: $shadow-soft;
+      overflow: hidden;
     }
     
     &:last-child {
       border-bottom: none;
+      
+      @media (max-width: $breakpoint-md) {
+        margin-bottom: 0;
+      }
     }
     
     &:nth-child(even) {
       background: rgba(0, 0, 0, 0.02);
+      
+      @media (max-width: $breakpoint-md) {
+        background: white;
+      }
     }
     
     // Special styling for snack and lunch rows
     &.snack-row, &.lunch-row {
       background: rgba(168, 181, 169, 0.1);
       
+      @media (max-width: $breakpoint-md) {
+        background: rgba(168, 181, 169, 0.1);
+      }
+      
       .activity {
         font-weight: $font-weight-medium;
         color: $color-sage-dark;
+        
+        @media (max-width: $breakpoint-md) {
+          // For snack/lunch rows, only show the first activity
+          &:nth-child(2) {
+            display: block;
+            text-align: center;
+            font-style: italic;
+            
+            &::before {
+              content: "";
+            }
+          }
+          
+          // Hide the other snack/lunch activities
+          &:nth-child(3),
+          &:nth-child(4),
+          &:nth-child(5) {
+            display: none;
+          }
+        }
       }
     }
   }
@@ -109,8 +147,14 @@
     text-align: center;
     
     @media (max-width: $breakpoint-md) {
-      padding: $spacing-sm;
-      font-size: 0.875rem;
+      // Mobile: full width header for each time slot
+      padding: $spacing-md;
+      background: $color-text-dark;
+      color: white;
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 1rem;
+      font-weight: $font-weight-bold;
     }
   }
   
@@ -122,8 +166,41 @@
     line-height: 1.4;
     
     @media (max-width: $breakpoint-md) {
-      padding: $spacing-sm;
-      font-size: 0.875rem;
+      // Mobile: stack activities vertically with day labels
+      padding: $spacing-sm $spacing-md;
+      border-right: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      font-size: 0.9rem;
+      position: relative;
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      // Add day labels before each activity
+      &:nth-child(2)::before {
+        content: "Monday: ";
+        font-weight: $font-weight-bold;
+        color: $color-text-dark;
+      }
+      
+      &:nth-child(3)::before {
+        content: "Tuesday: ";
+        font-weight: $font-weight-bold;
+        color: $color-text-dark;
+      }
+      
+      &:nth-child(4)::before {
+        content: "Wednesday: ";
+        font-weight: $font-weight-bold;
+        color: $color-text-dark;
+      }
+      
+      &:nth-child(5)::before {
+        content: "Thursday: ";
+        font-weight: $font-weight-bold;
+        color: $color-text-dark;
+      }
     }
     
     &:last-child {
@@ -134,28 +211,38 @@
     &.snack, &.lunch {
       text-align: center;
       font-style: italic;
+      
+      @media (max-width: $breakpoint-md) {
+        text-align: center;
+        
+        // Hide all snack/lunch activities except the first one
+        &:not(:first-child) {
+          display: none;
+        }
+        
+        // Remove day labels for snack/lunch
+        &::before {
+          content: "";
+        }
+      }
     }
   }
 }
 
-// Mobile responsiveness for very small screens
-@media (max-width: $breakpoint-sm) {
+// Mobile-specific improvements
+@media (max-width: $breakpoint-md) {
   .schedule-table {
-    .schedule-header,
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    
+    // Add spacing between time slot cards
     .schedule-row {
-      grid-template-columns: 80px repeat(4, 1fr);
-    }
-    
-    .time-slot,
-    .activity {
-      padding: $spacing-xs;
-      font-size: 0.75rem;
-    }
-    
-    .time-column,
-    .day-column {
-      padding: $spacing-sm;
-      font-size: 0.75rem;
+      margin-bottom: $spacing-lg;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
