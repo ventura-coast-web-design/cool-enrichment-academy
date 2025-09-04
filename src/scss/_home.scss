@@ -123,7 +123,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
     .program-card {
-      background: $color-sage-lightest;
+      background: $color-blue-lightest;
       padding: $spacing-lg;
       border-radius: $border-radius-md;
       box-shadow: $shadow-soft;
@@ -293,7 +293,7 @@ body {
 // Events & Community - Clean grid
 .events-community {
   padding: $spacing-xxl $spacing-lg;
-  background: $color-sage-dark;
+  background: $color-blue-dark;
   
   .container {
     max-width: $container-max-width;
@@ -389,7 +389,7 @@ body {
       }
   
       a {
-        color: $color-text-mid;
+        color: $color-text-dark;
       }
     }
 
@@ -435,50 +435,6 @@ body {
   }
 }
 
-// Newsletter - Clean, centered
-.newsletter {
-  padding: $spacing-xxl $spacing-lg;
-  background: white;
-  text-align: center;
-  
-  .container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 0 $container-padding;
-  }
-  
-  h2 {
-    margin-bottom: $spacing-sm;
-    font-size: 2rem;
-    color: $color-text-dark;
-  }
-  
-  p {
-    color: $color-text-mid;
-    margin-bottom: $spacing-lg;
-  }
-  
-  .newsletter-form {
-    display: flex;
-    gap: $spacing-sm;
-    max-width: 400px;
-    margin: 0 auto;
-    
-    .email-input {
-      flex: 1;
-      padding: $spacing-sm;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      border-radius: $border-radius-sm;
-      font-size: 1rem;
-      
-      &:focus {
-        outline: none;
-        border-color: $color-sage;
-      }
-    }
-  }
-}
-
 // Button Styles - Clean, minimal
 .btn-primary, .btn-secondary {
   display: inline-block;
@@ -495,11 +451,11 @@ body {
 }
 
 .btn-primary {
-  background: $color-sage-light;
-  color: $color-forest-dark;
+  background: $color-blue-light;
+  color: $color-text-dark;
   
   &:hover {
-    background: $color-sage;
+    background: $color-blue;
     color: $color-forest-dark;
   }
 }

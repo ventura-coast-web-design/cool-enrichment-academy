@@ -84,7 +84,7 @@
         transition: color 0.2s ease;
         
         &:hover {
-          color: $color-sage;
+          color: $color-blue;
         }
       }
     }
@@ -125,7 +125,7 @@
       
       &:focus {
         outline: none;
-        border-color: $color-sage;
+        border-color: $color-blue;
         box-shadow: 0 0 0 2px rgba(138, 154, 139, 0.1);
       }
       
