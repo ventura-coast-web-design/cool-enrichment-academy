@@ -49,7 +49,7 @@ body {
       font-size: 2.5rem;
       font-weight: $font-weight-bold;
       color: $color-cream-light;
-      margin-bottom: $spacing-sm;
+      margin: $spacing-sm 0;
       line-height: 1.2;
     }
     
@@ -277,13 +277,13 @@ body {
 
 // Core Values - Clean, centered
 .core-values {
-  padding: $spacing-xxl $spacing-lg;
   background: $color-bg-mid;
   text-align: center;
+  margin-bottom: 2rem;
   
   
   .container {
-    max-width: 70%;
+    max-width: 90%;
     margin: 0 auto;
     padding: 0 $container-padding;
   }
@@ -354,7 +354,6 @@ body {
   .container {
     max-width: $container-max-width;
     margin: 0 auto;
-    padding: 0 $container-padding;
   }
   
   h2 {
@@ -373,18 +372,27 @@ body {
   
   .visit-info {
     display: flex;
-    flex-direction: column;
-    gap: $spacing-xs;
+    flex-direction: row;
+    gap: $spacing-lg;
 
-    p {
-      color: $color-text-mid;
-      margin-bottom: $spacing-sm;
+    // @media (max-width: $breakpoint-md) {
+    //   flex-direction: column;
+    // }
+
+    .address {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
+
+      p {
+        color: $color-text-mid;
+      }
+  
+      a {
+        color: $color-text-mid;
+      }
     }
 
-    a {
-      color: $color-text-mid;
-      margin-bottom: $spacing-sm;
-    }
 
     .btn-primary {
       width: auto;
