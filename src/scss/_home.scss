@@ -119,10 +119,11 @@ body {
   .programs-grid {
     display: grid;
     justify-content: center;
+    gap: $spacing-xs;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
     .program-card {
-      background: $color-bg-card;
+      background: $color-sage-lightest;
       padding: $spacing-lg;
       border-radius: $border-radius-md;
       box-shadow: $shadow-soft;
@@ -148,7 +149,7 @@ body {
         gap: $spacing-sm;
         
         p {
-          color: $color-text-mid;
+          color: $color-text-dark;
           margin-bottom: $spacing-md;
           line-height: 1.6;
           flex: 1;
