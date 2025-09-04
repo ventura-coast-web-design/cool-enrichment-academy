@@ -144,10 +144,12 @@
     color: $color-text-dark;
     background: $color-bg-mid;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
     
     @media (max-width: $breakpoint-md) {
-      // Mobile: full width header for each time slot
       padding: $spacing-md;
       background: $color-text-dark;
       color: white;
@@ -164,6 +166,7 @@
     color: $color-text-mid;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
     line-height: 1.4;
+    text-align: center;
     
     @media (max-width: $breakpoint-md) {
       // Mobile: stack activities vertically with day labels
@@ -172,6 +175,7 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       font-size: 0.9rem;
       position: relative;
+      text-align: left; // Keep left-aligned on mobile for readability
       
       &:last-child {
         border-bottom: none;
