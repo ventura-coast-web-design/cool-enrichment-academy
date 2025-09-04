@@ -177,7 +177,7 @@
   
   .lightbox-prev,
   .lightbox-next {
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.2);
@@ -188,6 +188,7 @@
     padding: $spacing-sm;
     border-radius: 50%;
     transition: all 0.2s ease;
+    z-index: 1001;
     
     &:hover {
       background: rgba(255, 255, 255, 0.3);
@@ -196,11 +197,11 @@
   }
   
   .lightbox-prev {
-    left: -60px;
+    left: 20px;
   }
   
   .lightbox-next {
-    right: -60px;
+    right: 20px;
   }
 }
 
@@ -224,11 +225,11 @@
     }
     
     .lightbox-prev {
-      left: -40px;
+      left: 10px;
     }
     
     .lightbox-next {
-      right: -40px;
+      right: 10px;
     }
   }
 }
