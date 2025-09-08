@@ -33,16 +33,21 @@ body {
   .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 80%;
-    margin: 0 auto;
+    max-width: $container-max-width;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     padding: $spacing-lg;
     border-radius: 0.5rem;
-    margin: $spacing-xl $spacing-sm;
+    margin: 0 auto;
+    
+    // Add the same container padding as other sections
+    padding-left: $container-padding;
+    padding-right: $container-padding;
     
     @media (min-width: $breakpoint-md) {
       padding: $spacing-xxl;
-      margin: $spacing-xl $spacing-sm;
+      padding-left: $container-padding;
+      padding-right: $container-padding;
     }
     
     h1 {
