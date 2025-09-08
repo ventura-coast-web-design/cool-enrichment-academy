@@ -293,7 +293,7 @@ body {
 // Events & Community - Clean grid
 .events-community {
   padding: $spacing-xxl $spacing-lg;
-  background: $color-blue-dark;
+  background: $color-blue-lightest;
   
   .container {
     max-width: $container-max-width;
@@ -305,7 +305,7 @@ body {
     text-align: center;
     margin-bottom: $spacing-xl;
     font-size: 2rem;
-    color: white;
+    color: $color-text-dark;
   }
   
   .events-grid {
@@ -374,10 +374,6 @@ body {
     display: flex;
     flex-direction: row;
     gap: $spacing-lg;
-
-    // @media (max-width: $breakpoint-md) {
-    //   flex-direction: column;
-    // }
 
     .address {
       display: flex;
